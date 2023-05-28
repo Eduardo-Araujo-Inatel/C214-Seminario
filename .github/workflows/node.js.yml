@@ -27,11 +27,8 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Compress test artifact
-        run: zip -r coverage.zip coverage
-
       - name: Upload test artifact
         uses: actions/upload-artifact@v2
         with:
-          name: coverage-artifact
-          path: coverage.zip
+          name: Test artifact
+          path: coverage
