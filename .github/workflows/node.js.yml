@@ -27,13 +27,20 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Compress coverage folder
+        run: zip -r coverage.zip coverage
+
       - name: Upload test artifact
         uses: actions/upload-artifact@v2
         with:
           name: Test-artifact
-          path: coverage
+          path: coverage.zip
 
-    build:
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -42,7 +49,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Zip project
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compress build folder
         run: zip -r build.zip ./
 
       - name: Upload build artifact
