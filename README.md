@@ -1,4 +1,5 @@
 # Projeto C214 - Seminario
+[![Testes e upload de artefato](https://github.com/Eduardo-Araujo-Inatel/C214-Seminario/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Eduardo-Araujo-Inatel/C214-Seminario/actions/workflows/node.js.yml)
 
 ## O que é?
 Testes unitários de uma calculadora utilizando a ferramenta de testes `JEST`
